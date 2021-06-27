@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Twój Sklep z Grami!</title>
+    <link rel="stylesheet" href="/main.css"/>
+    <link rel="stylesheet" href="/commons.css"/>
+    <style>
+        h1 {text-align: center;}
+        p {text-align: center;}
+    </style>
+</head>
+<body>
+    <div th:replace="fragments.html :: header"></div>
+    <div th:replace="fragments.html :: menu"></div>
+    <div id="content">
+        <th:block th:each="game : ${games}">
+            <div class="game">
+                <img th:src="@{${'covers/' + game.code + '.jpg'}}" class="game-cover">
+                <p th:text="${game.title}" class="game-title"></p>
+                <p th:text="'Studio: ' + ${game.studio}" class="game-studio"></p>
+                <p th:text="'Gatunek: ' + ${game.genre}" class="game-genre"></p>
+                <p th:text="${game.platform}" class="game-platform"></p>
+                <div class="shop-info">
+                    <p th:text="'Cena: ' + ${game.price} + 'zł'" class="game-price"></p>
+                    <div th:text="'Ilość sztuk: ' + ${game.pieces}" class="game-pieces"></div>
+                    <div th:text="'Kod produktu: ' + ${game.code}" class="game-code"></div>
+                </div>
+            </div>
+        </th:block>
+    </div>
+</body>
+</html>

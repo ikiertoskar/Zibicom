@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Twój Sklep z Grami!</title>
+  <link rel="stylesheet" href="/main.css"/>
+  <link rel="stylesheet" href="/commons.css"/>
+  <style>
+        h1 {text-align: center;}
+        p {text-align: center;}
+    </style>
+</head>
+<body>
+<div class="header" th:fragment="header">
+  <a href="/"><img src="/logo.jpg" alt= logo id="logo"/></a>
+  <h1>ZiBiCom</h1>
+  <p>TWÓJ NAJLEPSZY SKLEP Z GRAMI!</p>
+
+</div>
+<div id="menu" th:fragment="menu">
+  <a href="/main">Strona Główna</a>
+  <a href="/contact">Kontakt</a>
+  <a href="/addGame">Dodaj Grę</a>
+  <a href="/login" th:if="${logged == false}">Zaloguj</a>
+  <a href="/logout" th:if="${logged == true}">Wyloguj</a>
+</div>
+</body>
+</html>

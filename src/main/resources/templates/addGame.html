@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Twój Sklep z Grami!</title>
+    <link rel="stylesheet" href="/addGame.css"/>
+    <link rel="stylesheet" href="/commons.css"/>
+    <style>
+        h1 {text-align: center;}
+        p {text-align: center;}
+    </style>
+</head>
+<body>
+<div th:replace="fragments.html :: header"></div>
+<div th:replace="fragments.html :: menu"></div>
+<div id="content">
+    <form id="add-game-form" method="post" action="/addGame" enctype="multipart/form-data">
+        <input type="text" placeholder="Tytuł" th:field="*{game.title}">
+        <input type="text" placeholder="Studio" th:field="*{game.studio}">
+        <input type="text" placeholder="Gatunek" th:field="*{game.genre}">
+        <input type="text" placeholder="Platforma" th:field="*{game.platform}">
+        <input type="text" placeholder="Cena" th:field="*{game.price}">
+        <input type="text" placeholder="Ilość sztuk" th:field="*{game.pieces}">
+        <input type="text" placeholder="Kod produktu" th:field="*{game.code}">
+        <input type="file" id="myFile" name="filename">
+        <input type="submit" value="Wyślij">
+    </form>
+</div>
+</body>
+</html>

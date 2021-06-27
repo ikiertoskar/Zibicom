@@ -1,0 +1,29 @@
+#add-game-form {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+#add-game-form input[type=text] {
+    display: block;
+    margin: 10px auto;
+    width: 50%;
+    font-size: 20px;
+    text-align: center;
+}
+
+#add-game-form input[type=submit] {
+    display: block;
+    margin: 10px auto;
+    font-size: 20px;
+    text-align: center;
+}
+
+#add-game-form input[type=file] {
+    display: block;
+    margin: 10px auto;
+    font-size: 20px;
+    text-align: center;
+}
+

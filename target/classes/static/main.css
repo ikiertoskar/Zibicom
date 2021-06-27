@@ -1,0 +1,55 @@
+.game {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 15px;
+    transition: border 0.25s;
+    margin: 7px;
+    padding: 10px;
+}
+
+.game:hover {
+    border: 1px solid white;
+}
+
+.game-title {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.game-studio {
+    font-size: 18px;
+    color: red;
+}
+
+.game-genre {
+    font-size: 20px;
+    float: center;
+}
+
+.game-platform {
+    font-weight: 800
+}
+
+.shop-info div {
+    font-size: 14px;
+    display: inline-block;
+    margin-right: 15px;
+
+}
+
+.game-price{
+    text-align: left;
+    margin-right: 15px;
+    margin-top: 15px;
+    font-weight: 800;
+}
+
+.game-cover{
+    float: left;
+    width: 220px;
+    height: auto;
+    margin-bottom: auto;
+    padding: 15px;
+}
+
+

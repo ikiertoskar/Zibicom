@@ -1,0 +1,56 @@
+.header {
+    align: center;
+    display: block;
+    background-color: white;
+    border-bottom: 2px solid black;
+}
+
+.header img {
+  float: left;
+  width: 130px;
+  height: 130px;
+  background: #211;
+}
+
+.header h1 {
+
+  position: center;
+  font-size: 75px;
+  margin: 0px auto;
+  text-align: center;
+}
+
+.header p {
+    font-size: 40px;
+    margin: 0px auto;
+}
+
+body {
+  background-color: lightgrey;
+}
+
+#menu {
+    text-align: center;
+    margin: 15px auto;
+    border-bottom: 2px solid black;
+}
+
+#menu a {
+    color: black;
+    font-size: 20px;
+    text-decoration:none;
+    margin: 0px 15px;
+    transition: color 0.5s;
+}
+
+#menu a:hover {
+    color: grey;
+    }
+
+#content {
+    display: block;
+    width: 75%;
+    margin: 0 auto;
+
+}
+
