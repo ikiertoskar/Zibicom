@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import pl.camp.it.database.Database;
 import pl.camp.it.model.Game;
 import pl.camp.it.session.SessionObject;
+import pl.camp.it.validators.GameValidator;
 
 import javax.annotation.Resource;
 import java.io.File;
@@ -39,11 +40,17 @@ public class GameController {
     public String addGameForm(Model model){
         model.addAttribute("game", new Game());
         model.addAttribute("logged", this.sessionObject.isLogged());
+        model.addAttribute("role",
+                this.sessionObject.getUser() != null ? this.sessionObject.getUser().getRole() : null);
         return "addGame";
     }
 
     @RequestMapping(value = "/addGame", method = RequestMethod.POST)
     public String addGame(@ModelAttribute Game game, @RequestParam MultipartFile filename) {
+
+        if (!GameValidator.validateBasics(game)){
+            return "redirect:/addGame";
+        }
         File fileOnDisk = null;
 
         if(filename.getOriginalFilename().contains(".png")) {
@@ -60,18 +67,13 @@ public class GameController {
             e.printStackTrace();
         }
 
-        System.out.println(game.getTitle());
-        System.out.println(game.getStudio());
-        System.out.println(game.getGenre());
-        System.out.println(game.getPlatform());
-        System.out.println(game.getPrice());
-        System.out.println(game.getPieces());
-        System.out.println(game.getPieces());
-
         Game gameFromDB = this.database.findGameByCode(game.getCode());
         if (gameFromDB != null) {
             gameFromDB.setPieces(gameFromDB.getPieces() + game.getPieces());
         } else {
+            if(!GameValidator.validateFull(game)){
+                return "redirect:/addGame";
+            }
             this.database.addGame(game);
         }
         return "redirect:/";

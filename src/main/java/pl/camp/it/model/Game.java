@@ -6,10 +6,10 @@ public class Game {
     private String genre;
     private String platform;
     private double price;
-    private int pieces;
+    private Integer pieces;
     private String code;
 
-    public Game(String title, String studio, String genre, String platform, double price, int pieces, String code) {
+    public Game(String title, String studio, String genre, String platform, double price, Integer pieces, String code) {
         this.title = title;
         this.studio = studio;
         this.genre = genre;
@@ -62,11 +62,11 @@ public class Game {
         this.price = price;
     }
 
-    public int getPieces() {
+    public Integer getPieces() {
         return pieces;
     }
 
-    public void setPieces(int pieces) {
+    public void setPieces(Integer pieces) {
         this.pieces = pieces;
     }
 

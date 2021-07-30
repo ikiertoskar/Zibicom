@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import pl.camp.it.database.Database;
 import pl.camp.it.model.Game;
+import pl.camp.it.model.view.GameToSell;
 import pl.camp.it.model.view.Mail;
 import pl.camp.it.session.SessionObject;
 
@@ -29,6 +30,8 @@ public class CommonController {
         List<Game> games = this.database.getAllGames();
         model.addAttribute("games", games);
         model.addAttribute("logged", this.sessionObject.isLogged());
+        model.addAttribute("role",
+                this.sessionObject.getUser() != null ? this.sessionObject.getUser().getRole() : null);
         return "main";
     }
 
@@ -41,11 +44,20 @@ public class CommonController {
     public String contact(Model model) {
         model.addAttribute("mail", new Mail());
         model.addAttribute("logged", this.sessionObject.isLogged());
+        model.addAttribute("role",
+                this.sessionObject.getUser() != null ? this.sessionObject.getUser().getRole() : null);
         return "contact";
     }
 
     @RequestMapping (value = "/contact", method = RequestMethod.POST)
     public String processForm(@ModelAttribute Mail mail) {
         return "redirect:/";
+
+    }
+
+    @RequestMapping (value = "/sellGame", method = RequestMethod.POST)
+    public String processForm(@ModelAttribute GameToSell gameToSell) {
+        return "redirect:/";
     }
 }
+

@@ -1,0 +1,26 @@
+#info {
+
+    height: 50%;
+    width: 50%;
+    text-align: center;
+    font-size: 28px;
+    margin: auto;
+    margin-top: 20px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+#sell-form {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+#sell-form input[type=text] {
+    text-align: center;
+    display: block;
+    margin: 10px auto;
+    width: 50%;
+    font-size: 20px;
+}
+

@@ -5,6 +5,7 @@
     transition: border 0.25s;
     margin: 7px;
     padding: 10px;
+    height: 300px;
 }
 
 .game:hover {
@@ -32,13 +33,12 @@
 
 .shop-info div {
     font-size: 14px;
-    display: inline-block;
     margin-right: 15px;
 
 }
 
 .game-price{
-    text-align: left;
+    text-align: center;
     margin-right: 15px;
     margin-top: 15px;
     font-weight: 800;
@@ -46,8 +46,8 @@
 
 .game-cover{
     float: left;
-    width: 220px;
-    height: auto;
+    width: auto;
+    height: 250px;
     margin-bottom: auto;
     padding: 15px;
 }

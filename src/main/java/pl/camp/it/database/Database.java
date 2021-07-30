@@ -28,7 +28,7 @@ public class Database {
                 "Cyberpunk 2077",
                 "CD Projekt Red",
                 "Action RPG",
-                "PlayStation",
+                "Xbox",
                 199.99,
                 20,
                 "222222"
@@ -106,7 +106,8 @@ public class Database {
                 "000000"
         ));
 
-        users.add(new User("Oskar", "Ikiert", "oskar", DigestUtils.md5Hex("oskar")));
+        users.add(new User("Oskar", "Ikiert", "oskar", DigestUtils.md5Hex("oskar"), User.Role.ADMIN));
+        users.add(new User("Paweł", "Wróbel", "pablo", DigestUtils.md5Hex("pablo"),User.Role.USER));
     }
 
     public List<Game> getAllGames() {
@@ -126,13 +127,13 @@ public class Database {
         return null;
     }
 
-    public boolean authenticate(String login, String password) {
+    public User authenticate(String login, String password) {
         for(User user : this.users) {
             if(user.getLogin().equals(login) && user.getPassword().equals(DigestUtils.md5Hex(password))) {
-                return true;
+                return user;
             }
         }
 
-        return false;
+        return null;
     }
 }

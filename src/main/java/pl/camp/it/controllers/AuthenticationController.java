@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.annotation.SessionScope;
 import pl.camp.it.database.Database;
+import pl.camp.it.model.User;
 import pl.camp.it.session.SessionObject;
 
 import javax.annotation.Resource;
@@ -28,11 +29,18 @@ public class AuthenticationController {
 
     @RequestMapping (value = "/login", method = RequestMethod.POST)
     public String login(@RequestParam String login, @RequestParam String password) {
-        if(database.authenticate(login, password)) {
-            sessionObject.setLogged(true);
+        User user = database.authenticate(login, password);
+        if(user != null) {
+            sessionObject.setUser(user);
             return "redirect:/main";
         } else {
             return "redirect:/login";
         }
+    }
+
+    @RequestMapping (value = "/logout", method = RequestMethod.GET)
+    public String logout() {
+        this.sessionObject.logoutUser();
+        return "redirect:/";
     }
 }

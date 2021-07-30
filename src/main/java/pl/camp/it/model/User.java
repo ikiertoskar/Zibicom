@@ -5,12 +5,15 @@ public class User {
     private String surname;
     private String login;
     private String password;
+    private Role role;
 
-    public User(String name, String surname, String login, String password) {
+
+    public User(String name, String surname, String login, String password, Role role) {
         this.name = name;
         this.surname = surname;
         this.login = login;
         this.password = password;
+        this.role = role;
     }
 
     public User() {
@@ -47,7 +50,21 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public enum Role {
+        USER,
+        ADMIN
+    }
 }
+
 
 
 
