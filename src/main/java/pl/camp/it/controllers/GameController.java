@@ -79,5 +79,8 @@ public class GameController {
         return "redirect:/";
     }
 
-
+    @RequestMapping(value = "/editGame", method = RequestMethod.GET)
+    public String editGameForm() {
+        return "editGame";
+    }
 }

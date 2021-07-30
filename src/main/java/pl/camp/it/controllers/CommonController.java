@@ -25,7 +25,7 @@ public class CommonController {
     @Resource
     SessionObject sessionObject;
 
-    @RequestMapping(value = "/" , method = RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String main(Model model) {
         List<Game> games = this.database.getAllGames();
         model.addAttribute("games", games);
@@ -35,12 +35,12 @@ public class CommonController {
         return "main";
     }
 
-    @RequestMapping(value = "/main" , method = RequestMethod.GET)
+    @RequestMapping(value = "/main", method = RequestMethod.GET)
     public String main2(Model model) {
         return "redirect:/";
     }
 
-    @RequestMapping (value = "/contact", method = RequestMethod.GET)
+    @RequestMapping(value = "/contact", method = RequestMethod.GET)
     public String contact(Model model) {
         model.addAttribute("mail", new Mail());
         model.addAttribute("logged", this.sessionObject.isLogged());
@@ -49,15 +49,19 @@ public class CommonController {
         return "contact";
     }
 
-    @RequestMapping (value = "/contact", method = RequestMethod.POST)
+    @RequestMapping(value = "/contact", method = RequestMethod.POST)
     public String processForm(@ModelAttribute Mail mail) {
         return "redirect:/";
 
     }
 
-    @RequestMapping (value = "/sellGame", method = RequestMethod.POST)
-    public String processForm(@ModelAttribute GameToSell gameToSell) {
-        return "redirect:/";
+    @RequestMapping(value = "/sellGame", method = RequestMethod.GET)
+    public String sell(Model model) {
+        model.addAttribute("game", new GameToSell());
+        model.addAttribute("logged", this.sessionObject.isLogged());
+        model.addAttribute("role",
+                this.sessionObject.getUser() != null ? this.sessionObject.getUser().getRole() : null);
+        return "sellGame";
     }
 }
 
