@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="995f359c-8290-4184-b122-2b0c38847960" name="Default Changelist" comment="v3">
+    <list default="true" id="995f359c-8290-4184-b122-2b0c38847960" name="Default Changelist" comment="v3.1">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/editGame.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/controllers/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/controllers/CommonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covers/141414.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/covers/141414.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/controllers/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/controllers/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/camp/it/controllers/CommonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/camp/it/controllers/CommonController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pl/camp/it/controllers/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/camp/it/controllers/GameController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main.html" afterDir="false" />
     </list>
@@ -21,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -79,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627659115301</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="v3.1">
+      <created>1627660963745</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1627660963745</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -104,6 +111,7 @@
       <path value="$PROJECT_DIR$/zibicom-v2" />
     </ignored-roots>
     <MESSAGE value="v3" />
-    <option name="LAST_COMMIT_MESSAGE" value="v3" />
+    <MESSAGE value="v3.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="v3.1" />
   </component>
 </project>

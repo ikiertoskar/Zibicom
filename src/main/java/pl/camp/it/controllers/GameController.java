@@ -4,10 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import pl.camp.it.database.Database;
 import pl.camp.it.model.Game;
@@ -79,8 +76,35 @@ public class GameController {
         return "redirect:/";
     }
 
-    @RequestMapping(value = "/editGame", method = RequestMethod.GET)
-    public String editGameForm() {
+    @RequestMapping(value = "/editGame/{code}", method = RequestMethod.GET)
+    public String editGameForm(Model model, @PathVariable String code) {
+        Game game = this.database.findGameByCode(code);
+        if (game == null) {
+            return "redirect:/main";
+        }
+        model.addAttribute("game", game);
+        model.addAttribute("logged", this.sessionObject.isLogged());
+        model.addAttribute("role",
+                this.sessionObject.getUser() != null ? this.sessionObject.getUser().getRole() : null);
         return "editGame";
+    }
+
+    @RequestMapping(value = "/editGame/{code}", method = RequestMethod.POST)
+    public String editGame(@PathVariable String code, @ModelAttribute Game game) {
+        Game gameFromDB = database.findGameByCode(code);
+        if (gameFromDB == null) {
+            return "redirect:/editGame/" + code;
+        }
+        gameFromDB.setTitle(game.getTitle());
+        gameFromDB.setStudio(game.getStudio());
+        gameFromDB.setGenre(game.getGenre());
+        gameFromDB.setPlatform(game.getPlatform());
+        gameFromDB.setPieces(game.getPieces());
+        gameFromDB.setPrice(game.getPrice());
+        gameFromDB.setCode(game.getCode());
+
+        return "redirect:/main";
+
+
     }
 }
