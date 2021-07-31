@@ -25,7 +25,8 @@
                     <p th:text="'Cena: ' + ${game.price} + 'zł'" class="game-price"></p>
                     <div th:text="'Ilość sztuk: ' + ${game.pieces}" class="game-pieces"></div>
                     <div th:text="'Kod produktu: ' + ${game.code}" class="game-code"></div>
-                    <div><a th:href="@{/editGame/{code}(code=${game.code})}">edytuj</a></div>
+                    <div th:if="${role?.name() == 'ADMIN'}"><a th:href="@{/editGame/{code}(code=${game.code})}">edytuj</a></div>
+                    <div th:if="${role?.name() == 'USER'}"><a th:href="@{/addToBasket/{code}(code=${game.code})}">dodaj do koszyka</a></div>
                 </div>
             </div>
         </th:block>

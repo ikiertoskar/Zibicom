@@ -20,7 +20,7 @@ public class Database {
                 "CD Projekt Red",
                 "Action RPG",
                 "PC",
-                99.99,
+                99.9,
                 10,
                 "111111"
         ));
@@ -29,7 +29,7 @@ public class Database {
                 "CD Projekt Red",
                 "Action RPG",
                 "Xbox",
-                199.99,
+                199.9,
                 20,
                 "222222"
         ));
@@ -38,7 +38,7 @@ public class Database {
                 "Guerrilla Games",
                 "Action RPG",
                 "PlayStation",
-                59.99,
+                59.9,
                 15,
                 "333333"
         ));
@@ -47,7 +47,7 @@ public class Database {
                 "Activision",
                 "FPS",
                 "XBOX",
-                239.99,
+                239.9,
                 5,
                 "444444"
         ));
@@ -56,7 +56,7 @@ public class Database {
                 "Electronic Arts",
                 "Simulator",
                 "PC",
-                39.99,
+                39.9,
                 25,
                 "555555"
         ));
@@ -65,7 +65,7 @@ public class Database {
                 "Electronic Arts",
                 "Sports",
                 "PlayStation",
-                69.99,
+                69.9,
                 30,
                 "666666"
         ));
@@ -74,7 +74,7 @@ public class Database {
                 "Electronic Arts",
                 "RPG",
                 "PlayStation",
-                249.99,
+                249.9,
                 9,
                 "777777"
         ));
@@ -83,7 +83,7 @@ public class Database {
                 "Ubisoft",
                 "Action RPG",
                 "XBOX",
-                179.99,
+                179.9,
                 14,
                 "888888"
         ));
@@ -92,7 +92,7 @@ public class Database {
                 "Crystal Dynamics",
                 "Action",
                 "PlayStation",
-                79.99,
+                79.9,
                 6,
                 "999999"
         ));
@@ -101,7 +101,7 @@ public class Database {
                 "Sony Interactive Entertainment",
                 "Action",
                 "PlayStation",
-                149.99,
+                149.9,
                 15,
                 "000000"
         ));
