@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Twój Sklep z Grami!</title>
+  <link rel="stylesheet" href="/login.css"/>
+  <link rel="stylesheet" href="/commons.css"/>
+  <script src="login.js"></script>
+  <style>
+        h1 {text-align: center;}
+        p {text-align: center;}
+    </style>
+</head>
+<body>
+<div th:replace="fragments.html :: header"></div>
+
+<div id="content">
+  <form id="login-form" method="post">
+    <input type="text" placeholder="Login" name="login" id="login-field" th:field="*{user.login}">
+    <input type="password" placeholder="Hasło" name="password" id="password-field" th:field="*{user.password}">
+    <input type="text" placeholder="Imię" name="name" id="name-field" th:field="*{user.name}">
+    <input type="text" placeholder="Nazwisko" name="surname" id="surname-field"th:field="*{user.surname}">
+    <input type="submit" value="Zarejestruj">
+  </form>
+</div>
+</body>
+</html>

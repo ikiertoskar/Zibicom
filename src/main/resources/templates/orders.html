@@ -3,7 +3,7 @@
 <head>
         <meta charset="UTF-8">
         <title>Twój Sklep z Grami!</title>
-        <link rel="stylesheet" href="/basket.css"/>
+        <link rel="stylesheet" href="/orders.css"/>
         <link rel="stylesheet" href="/commons.css"/>
 </head>
 <body>
@@ -11,10 +11,13 @@
     <div th:replace="fragments.html :: menu"></div>
     <div id="content">
         <th:block th:each="order : ${orders}">
-            <div>
-                <div th:text="${order.id}"></div>
-                <div th:text="${order.date}"></div>
-                <div th:text="${order.price}"></div>
+            <div class="order">
+                <div class="order-info">
+                    <div th:text=" 'ID zamówienia: ' + ${order.id}"></div>
+                    <div th:text=" 'Data zamówienia: ' + ${order.date}"></div>
+
+                </div>
+
                 <div> <th:block th:each="basketPosition : ${order.basket.basketPositions}">
                     <div class="position">
                         <p th:text="${basketPosition.game.title}" class="game-title"></p>
@@ -27,6 +30,7 @@
                         <div th:text="'Cena łacznie:' + ${basketPosition.pieces * basketPosition.game.price} + 'zł'" class="total-price-position"></div>
                     </div>
                 </th:block>
+                    <div class="total" th:text=" 'Kwota zamówienia: ' + ${order.price} + 'zł'"></div>
                 </div>
             </div>
         </th:block>

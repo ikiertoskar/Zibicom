@@ -10,6 +10,7 @@ import pl.camp.it.model.User;
 public class SessionObject {
     private User user = null;
     private Basket basket = new Basket();
+    private String findPattern;
 
     public SessionObject() {
     }
@@ -36,5 +37,13 @@ public class SessionObject {
 
     public void createNewBasket() {
         this.basket = new Basket();
+    }
+
+    public String getFindPattern() {
+        return findPattern;
+    }
+
+    public void setFindPattern(String findPattern) {
+        this.findPattern = findPattern;
     }
 }

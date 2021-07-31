@@ -70,9 +70,20 @@ public class BasketController {
 
     @RequestMapping(value = "/order", method = RequestMethod.GET)
     public String order() {
-        this.database.addOrder(new Order(this.sessionObject.getUser(), sessionObject.getBasket()));
-
         List<Game> gamesFromDB = this.database.getAllGames();
+
+        for (Game game : gamesFromDB) {
+            Iterator<Basket.BasketPosition> iterator = this.sessionObject.getBasket().getBasketPositions().iterator();
+           while (iterator.hasNext()){
+                Basket.BasketPosition actualBasketPosition = iterator.next();
+                if (game.getCode().equals(actualBasketPosition.getGame().getCode()) && game.getPieces() < actualBasketPosition.getPieces()){
+                    iterator.remove();
+                    return "redirect:/basket";
+                }
+            }
+        }
+
+        this.database.addOrder(new Order(this.sessionObject.getUser(), sessionObject.getBasket()));
 
         for (Game game : gamesFromDB) {
             for (Basket.BasketPosition position : this.sessionObject.getBasket().getBasketPositions()) {

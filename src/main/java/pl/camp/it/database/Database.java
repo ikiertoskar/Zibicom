@@ -117,6 +117,20 @@ public class Database {
         return this.games;
     }
 
+    public List<Game> getFilteredGames (String pattern) {
+        List<Game> filteredGames = new ArrayList<>();
+        for (Game game : this.games) {
+            if (game.getTitle().toLowerCase().contains(pattern.toLowerCase()) ||
+                    game.getStudio().toLowerCase().contains(pattern.toLowerCase()) ||
+                    game.getGenre().toLowerCase().contains(pattern.toLowerCase()) ||
+                    game.getPlatform().toLowerCase().contains(pattern.toLowerCase())){
+                filteredGames.add(game);
+            }
+        }
+
+        return filteredGames;
+    }
+
     public void addGame(Game game) {
         this.games.add(game);
     }
@@ -138,6 +152,11 @@ public class Database {
         }
 
         return null;
+    }
+
+    public void addUser (User user) {
+        user.setPassword(DigestUtils.md5Hex(user.getPassword()));
+        this.users.add(user);
     }
 
     public void addOrder (Order order) {

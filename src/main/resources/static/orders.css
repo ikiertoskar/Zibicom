@@ -1,15 +1,17 @@
-.position {
+.order {
     background-color: white;
     border: 1px solid black;
     border-radius: 15px;
     transition: border 0.25s;
     margin: 7px;
-    padding: 10px;
-    height: auto;
 }
 
-.position:hover {
-    border: 1px solid white;
+
+.position {
+    margin: 7px;
+    padding: 10px;
+    height: auto;
+    border-bottom-style: dotted;
 }
 
 .game-title {
@@ -38,7 +40,7 @@
 }
 
 .total {
-    text-align:right;
+    text-align: right;
     font-size: 20px;
     font-weight: 600;
     margin: 16px;
@@ -54,5 +56,6 @@
         font-size: 20px;
         font-weight: 600;
         margin: 16px;
+        border-bottom-style: solid;
 
 }
