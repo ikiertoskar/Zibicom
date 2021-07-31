@@ -33,4 +33,8 @@ public class SessionObject {
     public Basket getBasket() {
         return basket;
     }
+
+    public void createNewBasket() {
+        this.basket = new Basket();
+    }
 }

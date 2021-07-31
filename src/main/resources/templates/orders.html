@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+        <meta charset="UTF-8">
+        <title>Twój Sklep z Grami!</title>
+        <link rel="stylesheet" href="/basket.css"/>
+        <link rel="stylesheet" href="/commons.css"/>
+</head>
+<body>
+    <div th:replace="fragments.html :: header"></div>
+    <div th:replace="fragments.html :: menu"></div>
+    <div id="content">
+        <th:block th:each="order : ${orders}">
+            <div>
+                <div th:text="${order.id}"></div>
+                <div th:text="${order.date}"></div>
+                <div th:text="${order.price}"></div>
+                <div> <th:block th:each="basketPosition : ${order.basket.basketPositions}">
+                    <div class="position">
+                        <p th:text="${basketPosition.game.title}" class="game-title"></p>
+                        <div class="shop-info">
+                            <div th:text="${basketPosition.game.platform}" class="game-platform"></div>
+                            <div th:text="'Ilość sztuk: ' + ${basketPosition.pieces}" class="game-pieces"></div>
+                            <div th:text="'Kod produktu: ' + ${basketPosition.game.code}" class="game-code"></div>
+                        </div>
+                        <div th:text="'Cena za sztukę: ' + ${basketPosition.game.price} + 'zł'" class="game-price"></div>
+                        <div th:text="'Cena łacznie:' + ${basketPosition.pieces * basketPosition.game.price} + 'zł'" class="total-price-position"></div>
+                    </div>
+                </th:block>
+                </div>
+            </div>
+        </th:block>
+
+    </div>
+</body>
+</html>

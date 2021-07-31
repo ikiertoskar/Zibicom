@@ -4,19 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="995f359c-8290-4184-b122-2b0c38847960" name="Default Changelist" comment="v3.2">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/controllers/BasketController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/model/Basket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/basket.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/basket.html" afterDir="false" />
+    <list default="true" id="995f359c-8290-4184-b122-2b0c38847960" name="Default Changelist" comment="v3.3">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/model/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/orders.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/controllers/BasketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/controllers/BasketController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/database/Database.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/session/SessionObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/session/SessionObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/basket.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/basket.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/camp/it/database/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/camp/it/database/Database.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pl/camp/it/session/SessionObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/camp/it/session/SessionObject.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627727339603</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="v3.3">
+      <created>1627746399308</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1627746399308</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -125,6 +131,7 @@
     <MESSAGE value="v3" />
     <MESSAGE value="v3.1" />
     <MESSAGE value="v3.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="v3.2" />
+    <MESSAGE value="v3.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="v3.3" />
   </component>
 </project>

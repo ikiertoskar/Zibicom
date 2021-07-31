@@ -10,9 +10,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import pl.camp.it.database.Database;
 import pl.camp.it.model.Basket;
 import pl.camp.it.model.Game;
+import pl.camp.it.model.Order;
 import pl.camp.it.session.SessionObject;
 
+import java.awt.print.Book;
 import java.util.Iterator;
+import java.util.List;
 
 
 @Controller
@@ -64,4 +67,34 @@ public class BasketController {
         }
         return "redirect:/basket";
     }
+
+    @RequestMapping(value = "/order", method = RequestMethod.GET)
+    public String order() {
+        this.database.addOrder(new Order(this.sessionObject.getUser(), sessionObject.getBasket()));
+
+        List<Game> gamesFromDB = this.database.getAllGames();
+
+        for (Game game : gamesFromDB) {
+            for (Basket.BasketPosition position : this.sessionObject.getBasket().getBasketPositions()) {
+                if (game.getCode().equals(position.getGame().getCode())) {
+                    game.setPieces(game.getPieces() - position.getPieces());
+                }
+            }
+        }
+
+        this.sessionObject.createNewBasket();
+
+        return "redirect:/basket";
+    }
+
+    @RequestMapping(value = "/orders", method = RequestMethod.GET)
+    public String orders(Model model) {
+        model.addAttribute("logged", this.sessionObject.isLogged());
+        model.addAttribute("role",
+                this.sessionObject.getUser() != null ? this.sessionObject.getUser().getRole() : null);
+
+        model.addAttribute("orders", this.database.getOrdersForUser(this.sessionObject.getUser()));
+        return "orders";
+    }
+
 }

@@ -3,7 +3,9 @@ package pl.camp.it.database;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.stereotype.Component;
 import pl.camp.it.model.Game;
+import pl.camp.it.model.Order;
 import pl.camp.it.model.User;
+import pl.camp.it.session.SessionObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +14,7 @@ import java.util.List;
 public class Database {
     private List<Game> games = new ArrayList<>();
     private List<User> users = new ArrayList<>();
+    private List<Order> orders = new ArrayList<>();
     public boolean logged = false;
 
     public Database() {
@@ -135,5 +138,20 @@ public class Database {
         }
 
         return null;
+    }
+
+    public void addOrder (Order order) {
+        this.orders.add(order);
+    }
+
+    public List<Order> getOrdersForUser(User user) {
+        List<Order> result = new ArrayList<>();
+        for (Order order : this.orders) {
+            if (order.getUser().getLogin().equals(user.getLogin())){
+                result.add(order);
+            }
+        }
+
+        return result;
     }
 }
