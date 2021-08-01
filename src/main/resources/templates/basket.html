@@ -29,10 +29,10 @@
         <a th:href="@{/removeGameFromBasket/{code}(code=${basketPosition.game.code})}" class= "remove-button"><i class="fas fa-trash-alt"></i></a>
     </div>
   </th:block>
-  <div th:text="${'TOTAL: ' + sum} + 'zł'" class="total"></div>
-
-  <a href="/order">Potwierdź zamówienie </a>
-
+  <div class="total">
+    <div th:text="${'TOTAL: ' + sum} + 'zł'"></div>
+    <a id="confirm-button" href="/order">Potwierdź zamówienie </a>
+  </div>
 </div>
 </body>
 </html>

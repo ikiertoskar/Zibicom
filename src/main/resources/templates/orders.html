@@ -30,7 +30,7 @@
                         <div th:text="'Cena łacznie:' + ${basketPosition.pieces * basketPosition.game.price} + 'zł'" class="total-price-position"></div>
                     </div>
                 </th:block>
-                    <div class="total" th:text=" 'Kwota zamówienia: ' + ${order.price} + 'zł'"></div>
+                    <div id="total" th:text=" 'Kwota zamówienia: ' + ${order.price} + 'zł'"></div>
                 </div>
             </div>
         </th:block>

@@ -63,5 +63,16 @@ public class CommonController {
                 this.sessionObject.getUser() != null ? this.sessionObject.getUser().getRole() : null);
         return "sellGame";
     }
+
+    @RequestMapping (value = "/search", method = RequestMethod.POST)
+    public String search (Model model, @RequestParam String pattern) {
+        List<Game> games = this.database.getFilteredGames(pattern);
+        model.addAttribute("games", games);
+        model.addAttribute("logged", this.sessionObject.isLogged());
+        model.addAttribute("role",
+                this.sessionObject.getUser() != null ? this.sessionObject.getUser().getRole() : null);
+        return "main";
+
+    }
 }
 
